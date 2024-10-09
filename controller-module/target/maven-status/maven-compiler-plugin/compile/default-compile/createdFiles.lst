@@ -1,0 +1,6 @@
+com\ms\jwt\controller\policy\PolicyController.class
+com\ms\jwt\controller\CustomerManagement\CustomerController.class
+com\ms\jwt\controller\GlobalExceptionHandler.class
+com\ms\jwt\controller\jwtSecurityConfig\SwaggerConfig.class
+com\ms\jwt\itinerarycontroller\ItineraryController.class
+com\ms\jwt\controller\KeyAttraction\KeyAttractionController.class
