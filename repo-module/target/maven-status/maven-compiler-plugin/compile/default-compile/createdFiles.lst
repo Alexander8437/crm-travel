@@ -1,0 +1,11 @@
+com\ms\jwt\pkg\PackageRepository.class
+com\ms\jwt\repository\destination\DestinationRepository.class
+com\ms\jwt\repository\policy\policyRepository.class
+com\ms\jwt\repository\country\StateRepository.class
+com\ms\jwt\repository\RolePermissionsActionsRepository.class
+com\ms\jwt\repository\RolePermissionsRepository.class
+com\ms\jwt\repository\country\CountryRepository.class
+com\ms\jwt\repository\hotel\HotelServiceImpl.class
+com\ms\jwt\repository\RoleRepository.class
+com\ms\jwt\repository\UserRepository.class
+com\ms\jwt\repository\keyAttraction\KeyAttractionRepo.class
