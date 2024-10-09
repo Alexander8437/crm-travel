@@ -7,7 +7,7 @@
   </parent>
   <artifactId>dao-module</artifactId>
   <name>dao-module</name>
-   <version>0.0.1-SNAPSHOT</version>
+ 
   <description>Dao layer implementation</description>
    
 </project>
