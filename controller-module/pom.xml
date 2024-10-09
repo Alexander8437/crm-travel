@@ -27,21 +27,6 @@
 </dependency>
 </dependencies>
 
- <build>
-        <plugins>
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-war-plugin</artifactId>
-               
-                <configuration>
-                    <!-- Optional: If you need to include certain dependencies explicitly -->
-                    <packagingExcludes>WEB-INF/lib/dao-module.jar</packagingExcludes>
-                      <packagingExcludes>WEB-INF/lib/jwt-config.jar</packagingExcludes>
-                        <packagingExcludes>WEB-INF/lib/util-module.jar</packagingExcludes>
-                           
-                </configuration>
-            </plugin>
-        </plugins>
-    </build>
+ 
  
 </project>
