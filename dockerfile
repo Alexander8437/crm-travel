@@ -1,40 +1,20 @@
- # Start with a Maven base image
-FROM maven:3.8.5-openjdk-11 AS build
+ # Use the official OpenJDK image as the base
+FROM openjdk:17-jdk-alpine
 
 # Set the working directory inside the container
 WORKDIR /app
 
-# Copy the parent pom.xml
-COPY pom.xml .
+# Copy all the required JAR files into the container
+COPY dao-module/target/dao-module.jar /app/dao-module.jar
+COPY service-module/target/service-module.jar /app/service-module.jar
+COPY repo-module/target/repo-module.jar /app/repo-module.jar
+COPY util-module/target/util-module.jar /app/util-module.jar
+COPY controller-module/target/controller-module.jar /app/controller-module.jar
+COPY jwt-config/target/jwt-config.jar /app/jwt-config.jar
 
-# Copy module poms
-COPY dao-module/pom.xml ./dao-module/
-COPY service-module/pom.xml ./service-module/
-COPY repo-module/pom.xml ./repo-module/
-COPY util-module/pom.xml ./util-module/
-COPY controller-module/pom.xml ./controller-module/
-COPY jwt-config/pom.xml ./jwt-config/
-
-# Copy the entire multi-module project into the container
-COPY . .
-
-# Download dependencies
-RUN mvn dependency:go-offline
-
-# Build the project
-RUN mvn clean package
-
-# Create a new stage for the runtime environment
-FROM openjdk:11
-
-# Set the working directory inside the container
-WORKDIR /app
-
-# Copy the JAR file from the build stage
-COPY --from=build /app/target/my-app-1.0-SNAPSHOT.jar .
-
-# Expose the port
+# Expose the port the application will run on (change if necessary)
 EXPOSE 8080
 
-# Run the command
-CMD ["java", "-jar", "my-app-1.0-
+# Run the application with the correct classpath including all the JARs
+# Replace com.example.MainClass with your actual main class from controller-module
+ENTRYPOINT ["java", "-cp", "dao-module.jar:service-module.jar:repo-module.jar:util-module.jar:controller-module.jar:jwt-config.jar", "com.ms.jwt.CrmApplication"]
