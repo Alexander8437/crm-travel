@@ -1,0 +1,6 @@
+com\ms\jwt\request_response\LoginRequest.class
+com\ms\jwt\request_response\UserResponse.class
+com\ms\jwt\request_response\JwtResponse.class
+com\ms\jwt\request_response\UtilMethod.class
+com\ms\jwt\request_response\MessageResponse.class
+com\ms\jwt\request_response\SignupRequest.class
