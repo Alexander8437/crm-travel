@@ -16,21 +16,21 @@ COPY jwt-config/pom.xml ./jwt-config/
 # Copy the entire multi-module project into the container
 COPY . .
 
-# Build the project (this will create the jar file in target/controller-module)
+
+# Download dependencies
 RUN mvn dependency:go-offline
 
+# Copy the rest of the project files
+COPY . /app
 
-# Use a smaller image to run the application
-FROM openjdk:11-jre-slim
+# Build the project
+RUN mvn clean package
 
-# Set the working directory for the application
-WORKDIR /app
-
-# Copy the jar file from the build stage
-COPY --from=build /app/controller-module/target/controller-module-0.0.1-SNAPSHOT.jar app.jar
-
-# Expose the application port
+# Expose the port
 EXPOSE 8080
 
-# Define the command to run the application
-ENTRYPOINT ["java", "-jar", "app.jar"]
+# Run the command
+CMD ["mvn", "spring-boot:run"]
+
+
+
