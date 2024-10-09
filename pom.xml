@@ -116,7 +116,12 @@
 
 	<modules>
 		
+		<module>dao-module</module>
+		<module>service-module</module>
+		<module>repo-module</module>
+		<module>util-module</module>
 		<module>controller-module</module>
+		<module>jwt-config</module>
 		
 	</modules>
 </project>
