@@ -1,4 +1,0 @@
-com\ms\jwt\config\AuthEntryPointJwt.class
-com\ms\jwt\config\AuthTokenFilter.class
-com\ms\jwt\config\JwtUtils.class
-com\ms\jwt\config\AuthrEntryPointJwt.class
